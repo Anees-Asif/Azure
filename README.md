@@ -114,7 +114,7 @@ In Azure, the organization is structured through scopes. The four main scopes ar
 
 8. Disk: Standard SSD with "Delete with VM" enabled.
   
-   ![Disks]images/(disks.PNG)
+   ![Disks](images/disks.PNG)
 
 9. Networking: Use your virtual network and public subnet.
 
