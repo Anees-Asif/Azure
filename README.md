@@ -10,7 +10,7 @@ In Azure, the organization is structured through scopes. The four main scopes ar
 3. **Resource Groups**
 4. **Resources**
 
-![Azure Scope Levels](scope-levels.png)
+![Azure Scope Levels](images/scope-levels.png)
 
 ### 1. Management Groups
 
@@ -43,7 +43,7 @@ In Azure, the organization is structured through scopes. The four main scopes ar
 1. Navigate to [Azure Portal](https://portal.azure.com).
 2. Search for "SSH keys."
   
-   ![Search SSH Keys](search.PNG)
+   ![Search SSH Keys](images/search.PNG)
 
 3. Click on "Create."
 4. Choose `tech 254` as the resource group.
@@ -53,15 +53,15 @@ In Azure, the organization is structured through scopes. The four main scopes ar
    cat tech254-anees-az-key.pub | clip
    ```
    
-   ![SSH Key Details](ssh_key.PNG)
+   ![SSH Key Details](images/ssh_key.PNG)
 
 6. Proceed to tags and add an "owner" tag with your name.
 
-   ![Tag Details](tag.PNG)
+   ![Tag Details](images/tag.PNG)
 
 7. Review all settings before creation.
 
-   ![Review](review.PNG)
+   ![Review](images/review.PNG)
 
 ---
 
@@ -70,23 +70,23 @@ In Azure, the organization is structured through scopes. The four main scopes ar
 1. Search for "Virtual Networks" and click "Create."
 2. Name it `tech254-anees-app-db-vnet` and set the region to "UK South."
 
-   ![Virtual Network Configuration](vn_1.PNG)
+   ![Virtual Network Configuration](images/vn_1.PNG)
 
 3. Skip Azure Firewall in the security tab.
 4. Configure IP addresses.
 
    - Default Subnet: Rename to `public-subnet` and set starting address to `10.0.2.0/24`.
   
-   ![Public Subnet](public.PNG)
+   ![Public Subnet](images/public.PNG)
 
    - Create a new subnet called `private-subnet` with starting address `10.0.3.0/24`.
   
-   ![Subnets](subnets.PNG)
+   ![Subnets](images/subnets.PNG)
 
 5. Proceed to the tag page, add an "owner" tag with your name.
 6. Review all settings.
 
-   ![Review](review2.PNG)
+   ![Review](images/review2.PNG)
 
 ---
 
@@ -99,26 +99,26 @@ In Azure, the organization is structured through scopes. The four main scopes ar
    - Zones: 1
    - Image: **Ubuntu Pro 18.04 LTS (Gen 2)**
   
-   ![VM Image](image.PNG)
+   ![VM Image](images/image.PNG)
 
 3. Security Type: **Standard**
 4. Size: **B1s**
 
-   ![VM Size](size.PNG)
+   ![VM Size](images/size.PNG)
 
 5. Username: `adminuser`
 6. SSH Key: Use existing key stored in Azure.
 7. Allowed Ports: HTTP and SSH
   
-   ![VM Settings](vm_settings.PNG)
+   ![VM Settings](images/vm_settings.PNG)
 
 8. Disk: Standard SSD with "Delete with VM" enabled.
   
-   ![Disks](disks.PNG)
+   ![Disks]images/(disks.PNG)
 
 9. Networking: Use your virtual network and public subnet.
 
-   ![Networking](networking.PNG)
+   ![Networking](images/networking.PNG)
 
 10. User Data: Enable and enter contents of `reverse_proxy_provision.sh`.
 11. Add an "owner" tag and review all settings.
