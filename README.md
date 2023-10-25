@@ -89,11 +89,14 @@ In Azure, the organization is structured through scopes. The four main scopes ar
    ![Review](images/review2.PNG)
 
 ---
+Certainly! Here's the reorganized version where the "Database Setup" section now shares the first 8 steps with the "App Setup" section, and the "App Setup" section refers back to the "Database Setup" for those steps.
 
-# Virtual Machine Setup
+---
+
+## Common Setup Steps for Database and App
 
 1. Search for "Virtual Machine" and click "Create."
-2. Configure as follows:
+2. Configure the basic settings:
 
    - Region: UK South
    - Zones: 1
@@ -101,39 +104,66 @@ In Azure, the organization is structured through scopes. The four main scopes ar
   
    ![VM Image](images/image.PNG)
 
-3. Security Type: **Standard**
-4. Size: **B1s**
+3. Choose Security Type: **Standard**
+4. Pick the Size: **B1s**
 
    ![VM Size](images/size.PNG)
 
-5. Username: `adminuser`
-6. SSH Key: Use existing key stored in Azure.
-7. Allowed Ports: HTTP and SSH
+5. Set the Username: `adminuser`
+6. SSH Key: Use an existing key stored in Azure.
+7. Configure Allowed Ports: HTTP and SSH
   
    ![VM Settings](images/vm_settings.PNG)
 
-8. Disk: Standard SSD with "Delete with VM" enabled.
-  
+8. Disk Options: Select Standard SSD with the "Delete with VM" option enabled.
+
    ![Disks](images/disks.PNG)
+
+---
+
+## Database Setup
+
+Follow the Common Setup Steps 1-8 above, then proceed with the following:
+
+9. Networking: Configure the VM to reside on the private subnet, ensuring that no public IP is set.
+
+   ![Database Network Setup](images/db_network_setup.PNG)
+
+10. Configure NSG settings:
+
+    - Under "Configure NSG," select "Create New."
+    - Choose "MongoDB" from the service dropdown.
+  
+    ![Allow MongoDB](images/allow_mongodb.PNG)
+
+11. Advanced Settings:
+   
+    - Under "User Data," insert the contents of the `mongodb_automation` script.
+
+---
+
+## App Setup
+
+Follow the Common Setup Steps 1-8 above, then continue:
 
 9. Networking: Use your virtual network and public subnet.
 
    ![Networking](images/networking.PNG)
 
-10. User Data: Enable and enter contents of `reverse_proxy_provision.sh`.
+10. User Data: Enable and insert the contents of `azure_script.sh`. Paste the private IP of the database into the `DB_HOST` variable.
 11. Add an "owner" tag and review all settings.
 
 ---
 
-# Create Resource
+### Create Resource
 
-- In `tech254` resource group, click "Create" and search for **Ubuntu Pro 18.04 LTS** to create a VM template.
+- In `tech254` resource group, click "Create" and search for **Ubuntu Pro 18.04 LTS** to create a VM template. This is useful if we run into any blockers that stop us from using 18.04
 
 ---
 
-# Difference Between AWS and Azure
+## Difference Between AWS and Azure
 
-## Availability Zones (AZs)
+### Availability Zones (AZs)
 
 - **AWS**: Available zones in a region are not limited.
 - **Azure**: A maximum of 3 AZs in a region.
