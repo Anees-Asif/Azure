@@ -178,3 +178,7 @@ To bypass this prompt and automate the upgrade process:
 
 - **AWS**: Available zones in a region are not limited.
 - **Azure**: A maximum of 3 AZs in a region.
+
+### Two tier architecture
+
+![](images/diagram.PNG)
