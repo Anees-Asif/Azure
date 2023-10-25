@@ -153,7 +153,18 @@ Follow the Common Setup Steps 1-8 above, then continue:
 10. User Data: Enable and insert the contents of `azure_script.sh`. Paste the private IP of the database into the `DB_HOST` variable.
 11. Add an "owner" tag and review all settings.
 
+### Blocker
+
+While attempting to run `sudo apt upgrade` on my system, I was consistently interrupted by a `debconf` dialog. 
+
+To bypass this prompt and automate the upgrade process:
+1. I set the `DEBIAN_FRONTEND` variable to `noninteractive`, which ensured `debconf` wouldn't pause and wait for my input.
+2. I added the `Dpkg::Options::="--force-confnew"` option when using `apt`. This automatically accepts the package maintainer's version of the configuration file during upgrades.
+
+![](images/blocker.png)
+
 ---
+
 
 ### Create Resource
 
