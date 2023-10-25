@@ -181,4 +181,4 @@ To bypass this prompt and automate the upgrade process:
 
 ### Two tier architecture
 
-![](images/diagram.PNG)
+![](images/diagram.png)
