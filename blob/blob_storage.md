@@ -65,7 +65,7 @@ az storage blob upload \
      --file cat.jpg \
      --auth-mode login
 ```
-You should see a confirmation message indicating successful upload:
+You should see the following on your blob, indicating successful upload:
 ![](blob.PNG)
 
 ### Update Web Page
