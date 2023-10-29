@@ -49,7 +49,7 @@
    ![Review](images/review2.PNG)
 
 ---
-Certainly! Here's the reorganized version where the "Database Setup" section now shares the first 8 steps with the "App Setup" section, and the "App Setup" section refers back to the "Database Setup" for those steps.
+
 
 ---
 
